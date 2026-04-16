@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrameTrace by Yukiniko</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/CSInterface.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-accent"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="M2 12h20"></path><path d="M8 4v16"></path><path d="M16 4v16"></path><circle cx="12" cy="12" r="2" fill="currentColor"></circle></svg>
+        <div class="logo-info">
+            <h1>FrameTrace</h1>
+            <span class="logo-subtitle">VFX Frame Analyzer</span>
+        </div>
+      </div>
+      <div class="status-indicator" title="Plugin Status">
+        <span class="status-dot tooltip" id="status-dot"></span>
+      </div>
+    </header>
+
+    <main class="app-content">
+      
+      
+      <section class="section-card">
+        <div class="btn-group">
+            <button id="btn-analyze" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Analyze Selected
+            </button>
+            <button id="btn-analyze-all" class="btn-secondary" title="Auto Scan Active Sequence">
+                Scan Timeline
+            </button>
+        </div>
+      </section>
+
+      <div class="tabs-container" id="main-tabs" style="display: none;">
+        <button class="nav-tab active" data-view="view-analyzer">Analyzer</button>
+        <button class="nav-tab" data-view="view-refresh">Refresh</button>
+        <button class="nav-tab" data-view="view-notes">Notes</button>
+      </div>
+
+      <div class="view-panel active-view" id="view-analyzer" style="display: none;">
+        <div class="split-view" id="details-view">
+        
+        <section class="section-card flex-1" id="render-panel">
+          <div class="section-header">
+            <h2>Render Range</h2>
+            <button id="btn-copy-blender" class="btn-icon btn-small" title="Copy"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+          </div>
+          <div class="range-display">
+            <div class="range-card">
+              <span class="label">Start</span>
+              <span class="value cyan-glow" id="viewer-start">--</span>
+            </div>
+            <div class="range-card purple-theme">
+              <span class="label">End</span>
+              <span class="value purple-glow" id="viewer-end">--</span>
+            </div>
+          </div>
+        </section>
+
+        
+        <section class="section-card flex-1" id="inspector-panel">
+          <div class="section-header">
+            <h2>Inspector</h2>
+          </div>
+          <div class="inspector-grid">
+              <div class="inspector-item">
+                  <span class="label">FPS</span>
+                  <span class="value" id="val-fps">--</span>
+              </div>
+              <div class="inspector-item">
+                  <span class="label">Padding</span>
+                  <span class="value" id="val-padding">--</span>
+              </div>
+              <div class="inspector-item">
+                  <span class="label">Offset</span>
+                  <span class="value" id="val-offset">--</span>
+              </div>
+              <div class="inspector-item">
+                  <span class="label">Format</span>
+                  <span class="value" id="val-ext">--</span>
+              </div>
+          </div>
+        </section>
+      </div>
+
+      
+      <section class="section-card" id="missing-panel" style="display: none;">
+        <div class="section-header">
+          <h2>Missing Frames</h2>
+        </div>
+        <div id="missing-container">
+            
+        </div>
+      </section>
+
+      
+      <section class="section-card" id="heatmap-panel">
+        <div class="section-header">
+          <h2>Timeline Heatmap</h2>
+          <div class="btn-group">
+            <button id="btn-heatmap-toggle" class="btn-secondary" title="Toggle Frame Numbers">Nums</button>
+            <button id="btn-heatmap-analyze" class="btn-icon" title="Analyze Timeline Usage">
+               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <div id="heatmap-container" class="heatmap-container">
+           
+        </div>
+        <div class="heatmap-legend">
+           <div class="leg-item"><span class="legend-box used"></span> Used Frames</div>
+           <div class="leg-item"><span class="legend-box unused"></span> Unused Frames</div>
+        </div>
+      </section>
+      </div> 
+
+      <div class="view-panel" id="view-refresh" style="display: none;">
+      
+      <section class="section-card" id="refresh-panel">
+        <div class="section-header">
+          <h2>Render Refresh</h2>
+          <button id="btn-refresh-render" class="btn-secondary" style="color: var(--accent-cyan); border-color: var(--accent-cyan);">
+              Refresh Render
+          </button>
+        </div>
+        <div class="inspector-grid" style="margin-bottom: 6px;">
+           <div class="inspector-item"><span class="label">Last Render Time</span><span class="value" id="val-render-time">--</span></div>
+           <div class="inspector-item"><span class="label">Total Detected</span><span class="value" id="val-render-total">--</span></div>
+           <div class="inspector-item" style="grid-column: span 2;"><span class="label">Frames Added Since Last Scan</span><span class="value" id="val-render-added">--</span></div>
+        </div>
+        <div id="refresh-status" style="font-size: 10px; color: var(--text-muted); text-align: center;"></div>
+      </section>
+      </div> 
+
+      <div class="view-panel" id="view-notes" style="display: none;">
+      
+      <section class="section-card" id="notes-panel">
+        <div class="section-header">
+          <h2>Shot Notes</h2>
+          <div class="btn-group">
+            <button id="btn-delete-note" class="btn-icon" title="Delete Note">
+               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            </button>
+            <button id="btn-save-note" class="btn-secondary">Save Note</button>
+          </div>
+        </div>
+        <div class="notes-container" id="notes-list-container">
+           
+        </div>
+      </section>
+      </div> 
+
+      
+      <section class="section-card shot-manager" id="shot-manager-panel" style="display: none;">
+        <div class="section-header">
+          <h2>Shot Manager</h2>
+          <div class="btn-group">
+             <button id="btn-export-csv" class="btn-icon" title="Export CSV">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+             </button>
+             <button id="btn-clear-shots" class="btn-icon" title="Clear All">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+             </button>
+          </div>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Shot Name</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="shot-tbody">
+                <tr><td colspan="4"><div class="empty-state">No shots generated.</div></td></tr>
+            </tbody>
+        </table>
+      </section>
+      
+    </main>
+    <footer class="app-footer">
+        <span class="watermark">by yukiniko / <span class="wg-duingz">DUINGZ</span></span>
+    </footer>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
