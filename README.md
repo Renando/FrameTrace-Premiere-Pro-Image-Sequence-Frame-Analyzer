@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Status](https://img.shields.io/badge/status-active-success.svg)](#)
 
-<img src="https://github.com/user-attachments/assets/c54dfebe-9209-40c6-bda2-f6491ddf1132" alt="FrameTrace Hero Image" width="100%">
+<img src="https://github.com/user-attachments/assets/c54dfebe-9209-40c6-bda2-f6491ddf1132" alt="FrameTrace Hero Image" width="800">
 
 </div>
 
@@ -63,7 +63,7 @@ FrameTrace membaca nomor _frame_ asli langsung dari nama file atau metadata Anda
 
 ### 🇬🇧 English
 
-In standard animation and VFX pipelines, a common pain point occurs when editing image sequences directly in Adobe Premiere Pro. Native Premiere behavior resets frame numbers starting from zero when you trim a clip. This breaks the link to the original sequence and makes exporting accurate render ranges back to 3D software (like Blender) or compositing packages almost impossible. 
+In standard animation and VFX pipelines, a common pain point occurs when editing image sequences directly in Adobe Premiere Pro. Native Premiere behavior resets frame numbers starting from zero when you trim a clip. This breaks the link to the original sequence and makes exporting accurate render ranges back to 3D software (like Blender) or compositing packages almost impossible.
 
 **FrameTrace** exists to solve this exact problem by acting as a bridge. It reads the raw file data of your edited sequence and restores the original frame information, saving you hours of tedious manual calculation.
 
@@ -95,17 +95,17 @@ Dalam alur kerja animasi dan VFX standar, masalah umum terjadi saat mengedit _im
 
 ### 🇬🇧 Interface Overview / 🇮🇩 Gambaran Antarmuka
 
-|                                              UI Panel                                                |                                             Timeline Heatmap                                              |
-| :---------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
-| <img src="https://github.com/user-attachments/assets/554690ed-005f-4e42-85f2-05ad5e7a6c1c" alt="UI Panel" width="100%"> | <img src="https://github.com/user-attachments/assets/3d36edc8-3289-4895-965e-c32c00c715bb" alt="Timeline Heatmap" width="100%"> |
+|                                                        UI Panel                                                         |                                                        Timeline Heatmap                                                         |
+| :---------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/user-attachments/assets/554690ed-005f-4e42-85f2-05ad5e7a6c1c" alt="UI Panel" width="400"> | <img src="https://github.com/user-attachments/assets/3d36edc8-3289-4895-965e-c32c00c715bb" alt="Timeline Heatmap" width="400"> |
 
-|                                              Sequence Inspector                                               |                                          Shot Notes Panel                                           |
-| :-----------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
-| <img src="https://github.com/user-attachments/assets/c6422df9-ed2d-4672-a3af-cd778b113365" alt="Sequence Inspector" width="100%"> | <img src="https://github.com/user-attachments/assets/134f3fef-ce5b-4918-9e97-98d18b2ab7a9" alt="Shot Notes Panel" width="100%"> |
+|                                                        Sequence Inspector                                                         |                                                        Shot Notes Panel                                                         |
+| :-------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/user-attachments/assets/c6422df9-ed2d-4672-a3af-cd778b113365" alt="Sequence Inspector" width="400"> | <img src="https://github.com/user-attachments/assets/134f3fef-ce5b-4918-9e97-98d18b2ab7a9" alt="Shot Notes Panel" width="400"> |
 
-|                                              Refresh Render Panel                                             |                                                                                                     |
-| :-----------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
-| <img src="https://github.com/user-attachments/assets/f4eeca94-18c6-406b-93f3-abf31191375e" alt="Refresh Render Panel" width="100%"> |                                                                                                     |
+|                                                        Refresh Render Panel                                                         |     |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :-: |
+| <img src="https://github.com/user-attachments/assets/f4eeca94-18c6-406b-93f3-abf31191375e" alt="Refresh Render Panel" width="400"> |     |
 
 ---
 
@@ -113,7 +113,7 @@ Dalam alur kerja animasi dan VFX standar, masalah umum terjadi saat mengedit _im
 
 ### 🇬🇧 English
 
-![FrameTrace Demo](../Preview/demo.gif)
+<img src="../Preview/demo.gif" alt="FrameTrace Demo" width="800">
 
 Watch how FrameTrace instantly detects the original frame numbers from a heavily trimmed image sequence in the premiere timeline, allowing accurate extraction of Blender render ranges in a single click.
 
@@ -125,11 +125,11 @@ Di atas adalah tampilan bagaimana FrameTrace secara instan mendeteksi nomor _fra
 
 ## 💻 Compatibility / Kompatibilitas
 
-| Software / Perangkat Lunak | Version / Versi |
-| :--- | :--- |
-| **Adobe Premiere Pro** | 2022 and newer (2022+) |
-| **Operating System** | Windows / macOS |
-| **CEP Extensions** | Supported / Didukung |
+| Software / Perangkat Lunak | Version / Versi        |
+| :------------------------- | :--------------------- |
+| **Adobe Premiere Pro**     | 2022 and newer (2022+) |
+| **Operating System**       | Windows / macOS        |
+| **CEP Extensions**         | Supported / Didukung   |
 
 ---
 
@@ -314,6 +314,7 @@ Visi jangka panjang kami adalah mengembangkan FrameTrace dari sekadar kalkulator
 ### 🇬🇧 English
 
 If FrameTrace helps improve your rendering pipeline and workflow, please consider supporting the project:
+
 - ⭐ **Star the repository** to help others discover it.
 - 🐛 **Report bugs** in the issue tracker.
 - 💡 **Suggest new features** or improvements.
@@ -321,6 +322,7 @@ If FrameTrace helps improve your rendering pipeline and workflow, please conside
 ### 🇮🇩 Indonesian
 
 Jika FrameTrace membantu meningkatkan pipeline _rendering_ dan alur kerja Anda, mohon pertimbangkan untuk mendukung proyek ini:
+
 - ⭐ **Beri Bintang (Star) pada repositori** untuk membantu orang lain menemukannya.
 - 🐛 **Laporkan bug** di pelacak masalah (_issue tracker_).
 - 💡 **Sarankan fitur baru** atau peningkatan.
@@ -330,7 +332,7 @@ Jika FrameTrace membantu meningkatkan pipeline _rendering_ dan alur kerja Anda, 
 ## 👨‍💻 Author / Penulis
 
 Created and maintained by **Renando (Nando)** <br>
-*VFX Artist, 3D Animator & Creative Tool Developer*
+_VFX Artist, 3D Animator & Creative Tool Developer_
 
 ---
 
