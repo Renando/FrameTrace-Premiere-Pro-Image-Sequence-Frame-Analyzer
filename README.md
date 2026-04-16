@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Status](https://img.shields.io/badge/status-active-success.svg)](#)
 
-<img src="https://github.com/user-attachments/assets/c54dfebe-9209-40c6-bda2-f6491ddf1132" alt="FrameTrace Hero Image" width="200">
+<img src="https://github.com/user-attachments/assets/c54dfebe-9209-40c6-bda2-f6491ddf1132" alt="FrameTrace Hero Image" width="400">
 
 </div>
 
