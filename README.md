@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Status](https://img.shields.io/badge/status-active-success.svg)](#)
 
-<img src="https://github.com/user-attachments/assets/554690ed-005f-4e42-85f2-05ad5e7a6c1c" alt="FrameTrace Hero Image" width="100%">
+<img src="https://github.com/user-attachments/assets/c54dfebe-9209-40c6-bda2-f6491ddf1132" alt="FrameTrace Hero Image" width="100%">
 
 </div>
 
@@ -97,15 +97,15 @@ Dalam alur kerja animasi dan VFX standar, masalah umum terjadi saat mengedit _im
 
 |                                              UI Panel                                                |                                             Timeline Heatmap                                              |
 | :---------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
-| <img src="../Preview/UI%20PANEL.png" alt="UI Panel" width="100%"> | <img src="../Preview/TIMELINE%20HEATMAP.png" alt="Timeline Heatmap" width="100%"> |
+| <img src="https://github.com/user-attachments/assets/554690ed-005f-4e42-85f2-05ad5e7a6c1c" alt="UI Panel" width="100%"> | <img src="https://github.com/user-attachments/assets/3d36edc8-3289-4895-965e-c32c00c715bb" alt="Timeline Heatmap" width="100%"> |
 
 |                                              Sequence Inspector                                               |                                          Shot Notes Panel                                           |
 | :-----------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
-| <img src="../Preview/SEQUENCE%20INSPECTOR.png" alt="Sequence Inspector" width="100%"> | <img src="../Preview/SHOT%20NOTE%20PANEL.png" alt="Shot Notes Panel" width="100%"> |
+| <img src="https://github.com/user-attachments/assets/c6422df9-ed2d-4672-a3af-cd778b113365" alt="Sequence Inspector" width="100%"> | <img src="https://github.com/user-attachments/assets/134f3fef-ce5b-4918-9e97-98d18b2ab7a9" alt="Shot Notes Panel" width="100%"> |
 
 |                                              Refresh Render Panel                                             |                                                                                                     |
 | :-----------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
-| <img src="../Preview/REFRESH%20RENDER%20PANEL.png" alt="Refresh Render Panel" width="100%"> |                                                                                                     |
+| <img src="https://github.com/user-attachments/assets/f4eeca94-18c6-406b-93f3-abf31191375e" alt="Refresh Render Panel" width="100%"> |                                                                                                     |
 
 ---
 
